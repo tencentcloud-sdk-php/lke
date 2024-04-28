@@ -18,28 +18,20 @@ namespace TencentCloud\Lke\V20231130\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * ResetSession请求参数结构体
+ * QueryParseDocResult请求参数结构体
  *
- * @method string getSessionId() 获取会话ID
- * @method void setSessionId(string $SessionId) 设置会话ID
- * @method boolean getIsOnlyEmptyTheDialog() 获取是否仅清空会话关联
- * @method void setIsOnlyEmptyTheDialog(boolean $IsOnlyEmptyTheDialog) 设置是否仅清空会话关联
+ * @method string getTaskId() 获取任务ID
+ * @method void setTaskId(string $TaskId) 设置任务ID
  */
-class ResetSessionRequest extends AbstractModel
+class QueryParseDocResultRequest extends AbstractModel
 {
     /**
-     * @var string 会话ID
+     * @var string 任务ID
      */
-    public $SessionId;
+    public $TaskId;
 
     /**
-     * @var boolean 是否仅清空会话关联
-     */
-    public $IsOnlyEmptyTheDialog;
-
-    /**
-     * @param string $SessionId 会话ID
-     * @param boolean $IsOnlyEmptyTheDialog 是否仅清空会话关联
+     * @param string $TaskId 任务ID
      */
     function __construct()
     {
@@ -54,12 +46,8 @@ class ResetSessionRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("SessionId",$param) and $param["SessionId"] !== null) {
-            $this->SessionId = $param["SessionId"];
-        }
-
-        if (array_key_exists("IsOnlyEmptyTheDialog",$param) and $param["IsOnlyEmptyTheDialog"] !== null) {
-            $this->IsOnlyEmptyTheDialog = $param["IsOnlyEmptyTheDialog"];
+        if (array_key_exists("TaskId",$param) and $param["TaskId"] !== null) {
+            $this->TaskId = $param["TaskId"];
         }
     }
 }
