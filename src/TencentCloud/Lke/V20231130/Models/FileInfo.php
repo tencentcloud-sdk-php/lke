@@ -18,71 +18,71 @@ namespace TencentCloud\Lke\V20231130\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 应用模型配置
+ * 实时上传的文件信息
  *
- * @method string getName() 获取模型名称
+ * @method string getFileName() 获取文件名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setName(string $Name) 设置模型名称
+ * @method void setFileName(string $FileName) 设置文件名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getDesc() 获取模型描述
+ * @method string getFileSize() 获取文件大小
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setDesc(string $Desc) 设置模型描述
+ * @method void setFileSize(string $FileSize) 设置文件大小
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getContextLimit() 获取上下文指代轮次
+ * @method string getFileUrl() 获取文件的URL地址，COS地址
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setContextLimit(integer $ContextLimit) 设置上下文指代轮次
+ * @method void setFileUrl(string $FileUrl) 设置文件的URL地址，COS地址
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getAliasName() 获取模型别名
+ * @method string getFileType() 获取文件类型
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setAliasName(string $AliasName) 设置模型别名
+ * @method void setFileType(string $FileType) 设置文件类型
 注意：此字段可能返回 null，表示取不到有效值。
- * @method float getTokenBalance() 获取token余量
+ * @method string getDocId() 获取解析后返回的DocID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTokenBalance(float $TokenBalance) 设置token余量
+ * @method void setDocId(string $DocId) 设置解析后返回的DocID
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class AppModel extends AbstractModel
+class FileInfo extends AbstractModel
 {
     /**
-     * @var string 模型名称
+     * @var string 文件名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Name;
+    public $FileName;
 
     /**
-     * @var string 模型描述
+     * @var string 文件大小
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Desc;
+    public $FileSize;
 
     /**
-     * @var integer 上下文指代轮次
+     * @var string 文件的URL地址，COS地址
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $ContextLimit;
+    public $FileUrl;
 
     /**
-     * @var string 模型别名
+     * @var string 文件类型
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $AliasName;
+    public $FileType;
 
     /**
-     * @var float token余量
+     * @var string 解析后返回的DocID
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $TokenBalance;
+    public $DocId;
 
     /**
-     * @param string $Name 模型名称
+     * @param string $FileName 文件名称
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Desc 模型描述
+     * @param string $FileSize 文件大小
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $ContextLimit 上下文指代轮次
+     * @param string $FileUrl 文件的URL地址，COS地址
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $AliasName 模型别名
+     * @param string $FileType 文件类型
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param float $TokenBalance token余量
+     * @param string $DocId 解析后返回的DocID
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -98,24 +98,24 @@ class AppModel extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Name",$param) and $param["Name"] !== null) {
-            $this->Name = $param["Name"];
+        if (array_key_exists("FileName",$param) and $param["FileName"] !== null) {
+            $this->FileName = $param["FileName"];
         }
 
-        if (array_key_exists("Desc",$param) and $param["Desc"] !== null) {
-            $this->Desc = $param["Desc"];
+        if (array_key_exists("FileSize",$param) and $param["FileSize"] !== null) {
+            $this->FileSize = $param["FileSize"];
         }
 
-        if (array_key_exists("ContextLimit",$param) and $param["ContextLimit"] !== null) {
-            $this->ContextLimit = $param["ContextLimit"];
+        if (array_key_exists("FileUrl",$param) and $param["FileUrl"] !== null) {
+            $this->FileUrl = $param["FileUrl"];
         }
 
-        if (array_key_exists("AliasName",$param) and $param["AliasName"] !== null) {
-            $this->AliasName = $param["AliasName"];
+        if (array_key_exists("FileType",$param) and $param["FileType"] !== null) {
+            $this->FileType = $param["FileType"];
         }
 
-        if (array_key_exists("TokenBalance",$param) and $param["TokenBalance"] !== null) {
-            $this->TokenBalance = $param["TokenBalance"];
+        if (array_key_exists("DocId",$param) and $param["DocId"] !== null) {
+            $this->DocId = $param["DocId"];
         }
     }
 }
