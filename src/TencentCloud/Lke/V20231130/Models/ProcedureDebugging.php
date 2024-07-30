@@ -18,71 +18,71 @@ namespace TencentCloud\Lke\V20231130\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 模型信息
+ * 调试信息
  *
- * @method string getModelName() 获取模型名称
+ * @method string getContent() 获取检索query
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setModelName(string $ModelName) 设置模型名称
+ * @method void setContent(string $Content) 设置检索query
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getModelDesc() 获取模型描述
+ * @method string getSystem() 获取系统prompt
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setModelDesc(string $ModelDesc) 设置模型描述
+ * @method void setSystem(string $System) 设置系统prompt
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getAliasName() 获取模型名称
+ * @method array getHistories() 获取多轮历史信息
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setAliasName(string $AliasName) 设置模型名称
+ * @method void setHistories(array $Histories) 设置多轮历史信息
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getResourceStatus() 获取资源状态 1：资源可用；2：资源已用尽
+ * @method array getKnowledge() 获取检索知识
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setResourceStatus(integer $ResourceStatus) 设置资源状态 1：资源可用；2：资源已用尽
+ * @method void setKnowledge(array $Knowledge) 设置检索知识
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getPromptWordsLimit() 获取提示词内容字符限制
+ * @method TaskFlowSummary getTaskFlow() 获取任务流程
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setPromptWordsLimit(string $PromptWordsLimit) 设置提示词内容字符限制
+ * @method void setTaskFlow(TaskFlowSummary $TaskFlow) 设置任务流程
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class ModelInfo extends AbstractModel
+class ProcedureDebugging extends AbstractModel
 {
     /**
-     * @var string 模型名称
+     * @var string 检索query
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $ModelName;
+    public $Content;
 
     /**
-     * @var string 模型描述
+     * @var string 系统prompt
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $ModelDesc;
+    public $System;
 
     /**
-     * @var string 模型名称
+     * @var array 多轮历史信息
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $AliasName;
+    public $Histories;
 
     /**
-     * @var integer 资源状态 1：资源可用；2：资源已用尽
+     * @var array 检索知识
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $ResourceStatus;
+    public $Knowledge;
 
     /**
-     * @var string 提示词内容字符限制
+     * @var TaskFlowSummary 任务流程
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $PromptWordsLimit;
+    public $TaskFlow;
 
     /**
-     * @param string $ModelName 模型名称
+     * @param string $Content 检索query
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $ModelDesc 模型描述
+     * @param string $System 系统prompt
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $AliasName 模型名称
+     * @param array $Histories 多轮历史信息
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $ResourceStatus 资源状态 1：资源可用；2：资源已用尽
+     * @param array $Knowledge 检索知识
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $PromptWordsLimit 提示词内容字符限制
+     * @param TaskFlowSummary $TaskFlow 任务流程
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -98,24 +98,35 @@ class ModelInfo extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("ModelName",$param) and $param["ModelName"] !== null) {
-            $this->ModelName = $param["ModelName"];
+        if (array_key_exists("Content",$param) and $param["Content"] !== null) {
+            $this->Content = $param["Content"];
         }
 
-        if (array_key_exists("ModelDesc",$param) and $param["ModelDesc"] !== null) {
-            $this->ModelDesc = $param["ModelDesc"];
+        if (array_key_exists("System",$param) and $param["System"] !== null) {
+            $this->System = $param["System"];
         }
 
-        if (array_key_exists("AliasName",$param) and $param["AliasName"] !== null) {
-            $this->AliasName = $param["AliasName"];
+        if (array_key_exists("Histories",$param) and $param["Histories"] !== null) {
+            $this->Histories = [];
+            foreach ($param["Histories"] as $key => $value){
+                $obj = new HistorySummary();
+                $obj->deserialize($value);
+                array_push($this->Histories, $obj);
+            }
         }
 
-        if (array_key_exists("ResourceStatus",$param) and $param["ResourceStatus"] !== null) {
-            $this->ResourceStatus = $param["ResourceStatus"];
+        if (array_key_exists("Knowledge",$param) and $param["Knowledge"] !== null) {
+            $this->Knowledge = [];
+            foreach ($param["Knowledge"] as $key => $value){
+                $obj = new KnowledgeSummary();
+                $obj->deserialize($value);
+                array_push($this->Knowledge, $obj);
+            }
         }
 
-        if (array_key_exists("PromptWordsLimit",$param) and $param["PromptWordsLimit"] !== null) {
-            $this->PromptWordsLimit = $param["PromptWordsLimit"];
+        if (array_key_exists("TaskFlow",$param) and $param["TaskFlow"] !== null) {
+            $this->TaskFlow = new TaskFlowSummary();
+            $this->TaskFlow->deserialize($param["TaskFlow"]);
         }
     }
 }
