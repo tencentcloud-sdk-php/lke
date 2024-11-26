@@ -18,35 +18,47 @@ namespace TencentCloud\Lke\V20231130\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 计费统计信息
+ * 模型参数范围
  *
- * @method string getX() 获取X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
+ * @method float getDefault() 获取默认值
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setX(string $X) 设置X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
+ * @method void setDefault(float $Default) 设置默认值
 注意：此字段可能返回 null，表示取不到有效值。
- * @method float getY() 获取Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
+ * @method float getMin() 获取最小值
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setY(float $Y) 设置Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
+ * @method void setMin(float $Min) 设置最小值
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method float getMax() 获取最大值
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setMax(float $Max) 设置最大值
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class Stat extends AbstractModel
+class ModelParameter extends AbstractModel
 {
     /**
-     * @var string X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
+     * @var float 默认值
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $X;
+    public $Default;
 
     /**
-     * @var float Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
+     * @var float 最小值
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Y;
+    public $Min;
 
     /**
-     * @param string $X X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
+     * @var float 最大值
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param float $Y Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
+     */
+    public $Max;
+
+    /**
+     * @param float $Default 默认值
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param float $Min 最小值
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param float $Max 最大值
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -62,12 +74,16 @@ class Stat extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("X",$param) and $param["X"] !== null) {
-            $this->X = $param["X"];
+        if (array_key_exists("Default",$param) and $param["Default"] !== null) {
+            $this->Default = $param["Default"];
         }
 
-        if (array_key_exists("Y",$param) and $param["Y"] !== null) {
-            $this->Y = $param["Y"];
+        if (array_key_exists("Min",$param) and $param["Min"] !== null) {
+            $this->Min = $param["Min"];
+        }
+
+        if (array_key_exists("Max",$param) and $param["Max"] !== null) {
+            $this->Max = $param["Max"];
         }
     }
 }

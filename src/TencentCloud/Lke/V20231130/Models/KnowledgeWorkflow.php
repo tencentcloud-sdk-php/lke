@@ -18,28 +18,24 @@ namespace TencentCloud\Lke\V20231130\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeSegments请求参数结构体
+ * 问答知识库工作流配置
  *
- * @method string getBotBizId() 获取应用ID
- * @method void setBotBizId(string $BotBizId) 设置应用ID
- * @method array getSegBizId() 获取文档片段ID
- * @method void setSegBizId(array $SegBizId) 设置文档片段ID
+ * @method boolean getIsEnabled() 获取是否启用工作流
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setIsEnabled(boolean $IsEnabled) 设置是否启用工作流
+注意：此字段可能返回 null，表示取不到有效值。
  */
-class DescribeSegmentsRequest extends AbstractModel
+class KnowledgeWorkflow extends AbstractModel
 {
     /**
-     * @var string 应用ID
+     * @var boolean 是否启用工作流
+注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $BotBizId;
+    public $IsEnabled;
 
     /**
-     * @var array 文档片段ID
-     */
-    public $SegBizId;
-
-    /**
-     * @param string $BotBizId 应用ID
-     * @param array $SegBizId 文档片段ID
+     * @param boolean $IsEnabled 是否启用工作流
+注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
     {
@@ -54,12 +50,8 @@ class DescribeSegmentsRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("BotBizId",$param) and $param["BotBizId"] !== null) {
-            $this->BotBizId = $param["BotBizId"];
-        }
-
-        if (array_key_exists("SegBizId",$param) and $param["SegBizId"] !== null) {
-            $this->SegBizId = $param["SegBizId"];
+        if (array_key_exists("IsEnabled",$param) and $param["IsEnabled"] !== null) {
+            $this->IsEnabled = $param["IsEnabled"];
         }
     }
 }

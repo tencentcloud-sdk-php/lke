@@ -18,35 +18,35 @@ namespace TencentCloud\Lke\V20231130\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 计费统计信息
+ * 检索范围配置
  *
- * @method string getX() 获取X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
+ * @method string getCondition() 获取检索条件and/or
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setX(string $X) 设置X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
+ * @method void setCondition(string $Condition) 设置检索条件and/or
 注意：此字段可能返回 null，表示取不到有效值。
- * @method float getY() 获取Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
+ * @method array getApiVarAttrInfos() 获取自定义变量和标签关系数据	
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setY(float $Y) 设置Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
+ * @method void setApiVarAttrInfos(array $ApiVarAttrInfos) 设置自定义变量和标签关系数据	
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class Stat extends AbstractModel
+class SearchRange extends AbstractModel
 {
     /**
-     * @var string X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
+     * @var string 检索条件and/or
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $X;
+    public $Condition;
 
     /**
-     * @var float Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
+     * @var array 自定义变量和标签关系数据	
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Y;
+    public $ApiVarAttrInfos;
 
     /**
-     * @param string $X X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
+     * @param string $Condition 检索条件and/or
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param float $Y Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
+     * @param array $ApiVarAttrInfos 自定义变量和标签关系数据	
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -62,12 +62,17 @@ class Stat extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("X",$param) and $param["X"] !== null) {
-            $this->X = $param["X"];
+        if (array_key_exists("Condition",$param) and $param["Condition"] !== null) {
+            $this->Condition = $param["Condition"];
         }
 
-        if (array_key_exists("Y",$param) and $param["Y"] !== null) {
-            $this->Y = $param["Y"];
+        if (array_key_exists("ApiVarAttrInfos",$param) and $param["ApiVarAttrInfos"] !== null) {
+            $this->ApiVarAttrInfos = [];
+            foreach ($param["ApiVarAttrInfos"] as $key => $value){
+                $obj = new ApiVarAttrInfo();
+                $obj->deserialize($value);
+                array_push($this->ApiVarAttrInfos, $obj);
+            }
         }
     }
 }

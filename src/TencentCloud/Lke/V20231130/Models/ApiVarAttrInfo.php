@@ -18,35 +18,35 @@ namespace TencentCloud\Lke\V20231130\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 计费统计信息
+ * 自定义变量和标签关系数据
  *
- * @method string getX() 获取X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
+ * @method string getApiVarId() 获取自定义变量id
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setX(string $X) 设置X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
+ * @method void setApiVarId(string $ApiVarId) 设置自定义变量id
 注意：此字段可能返回 null，表示取不到有效值。
- * @method float getY() 获取Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
+ * @method string getAttrBizId() 获取标签id
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setY(float $Y) 设置Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
+ * @method void setAttrBizId(string $AttrBizId) 设置标签id
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class Stat extends AbstractModel
+class ApiVarAttrInfo extends AbstractModel
 {
     /**
-     * @var string X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
+     * @var string 自定义变量id
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $X;
+    public $ApiVarId;
 
     /**
-     * @var float Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
+     * @var string 标签id
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Y;
+    public $AttrBizId;
 
     /**
-     * @param string $X X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”三种区间范围
+     * @param string $ApiVarId 自定义变量id
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param float $Y Y轴: 该时间区域内的统计值，如token消耗量，调用次数或使用量等信息
+     * @param string $AttrBizId 标签id
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -62,12 +62,12 @@ class Stat extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("X",$param) and $param["X"] !== null) {
-            $this->X = $param["X"];
+        if (array_key_exists("ApiVarId",$param) and $param["ApiVarId"] !== null) {
+            $this->ApiVarId = $param["ApiVarId"];
         }
 
-        if (array_key_exists("Y",$param) and $param["Y"] !== null) {
-            $this->Y = $param["Y"];
+        if (array_key_exists("AttrBizId",$param) and $param["AttrBizId"] !== null) {
+            $this->AttrBizId = $param["AttrBizId"];
         }
     }
 }
