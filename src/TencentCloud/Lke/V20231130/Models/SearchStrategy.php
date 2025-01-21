@@ -18,35 +18,35 @@ namespace TencentCloud\Lke\V20231130\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 问答知识库工作流配置
+ * 知识库检索策略
  *
- * @method boolean getIsEnabled() 获取是否启用工作流
+ * @method integer getStrategyType() 获取检索策略类型 0:混合检索，1：语义检索
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setIsEnabled(boolean $IsEnabled) 设置是否启用工作流
+ * @method void setStrategyType(integer $StrategyType) 设置检索策略类型 0:混合检索，1：语义检索
 注意：此字段可能返回 null，表示取不到有效值。
- * @method boolean getUsePdl() 获取是否启用PDL
+ * @method boolean getTableEnhancement() 获取Excel检索增强开关
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setUsePdl(boolean $UsePdl) 设置是否启用PDL
+ * @method void setTableEnhancement(boolean $TableEnhancement) 设置Excel检索增强开关
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class KnowledgeWorkflow extends AbstractModel
+class SearchStrategy extends AbstractModel
 {
     /**
-     * @var boolean 是否启用工作流
+     * @var integer 检索策略类型 0:混合检索，1：语义检索
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $IsEnabled;
+    public $StrategyType;
 
     /**
-     * @var boolean 是否启用PDL
+     * @var boolean Excel检索增强开关
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $UsePdl;
+    public $TableEnhancement;
 
     /**
-     * @param boolean $IsEnabled 是否启用工作流
+     * @param integer $StrategyType 检索策略类型 0:混合检索，1：语义检索
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param boolean $UsePdl 是否启用PDL
+     * @param boolean $TableEnhancement Excel检索增强开关
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -62,12 +62,12 @@ class KnowledgeWorkflow extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("IsEnabled",$param) and $param["IsEnabled"] !== null) {
-            $this->IsEnabled = $param["IsEnabled"];
+        if (array_key_exists("StrategyType",$param) and $param["StrategyType"] !== null) {
+            $this->StrategyType = $param["StrategyType"];
         }
 
-        if (array_key_exists("UsePdl",$param) and $param["UsePdl"] !== null) {
-            $this->UsePdl = $param["UsePdl"];
+        if (array_key_exists("TableEnhancement",$param) and $param["TableEnhancement"] !== null) {
+            $this->TableEnhancement = $param["TableEnhancement"];
         }
     }
 }

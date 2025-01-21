@@ -18,131 +18,131 @@ namespace TencentCloud\Lke\V20231130\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 应用模型配置
+ * Agent中的参考来源
  *
- * @method string getName() 获取模型名称
+ * @method string getDocId() 获取来源文档ID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setName(string $Name) 设置模型名称
+ * @method void setDocId(string $DocId) 设置来源文档ID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getDesc() 获取模型描述
+ * @method string getId() 获取id
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setDesc(string $Desc) 设置模型描述
+ * @method void setId(string $Id) 设置id
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getContextLimit() 获取上下文指代轮次
+ * @method string getName() 获取名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setContextLimit(integer $ContextLimit) 设置上下文指代轮次
+ * @method void setName(string $Name) 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getAliasName() 获取模型别名
+ * @method integer getType() 获取类型
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setAliasName(string $AliasName) 设置模型别名
+ * @method void setType(integer $Type) 设置类型
 注意：此字段可能返回 null，表示取不到有效值。
- * @method float getTokenBalance() 获取token余量
+ * @method string getUrl() 获取链接
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTokenBalance(float $TokenBalance) 设置token余量
+ * @method void setUrl(string $Url) 设置链接
 注意：此字段可能返回 null，表示取不到有效值。
- * @method boolean getIsUseContext() 获取是否使用上下文指代轮次
+ * @method string getDocBizId() 获取文档业务ID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setIsUseContext(boolean $IsUseContext) 设置是否使用上下文指代轮次
+ * @method void setDocBizId(string $DocBizId) 设置文档业务ID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getHistoryLimit() 获取上下文记忆轮数
+ * @method string getDocName() 获取文档名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setHistoryLimit(integer $HistoryLimit) 设置上下文记忆轮数
+ * @method void setDocName(string $DocName) 设置文档名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getUsageType() 获取使用类型
+ * @method string getQaBizId() 获取问答业务ID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setUsageType(string $UsageType) 设置使用类型
+ * @method void setQaBizId(string $QaBizId) 设置问答业务ID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getTemperature() 获取模型温度
+ * @method integer getIndex() 获取搜索引擎索引
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTemperature(string $Temperature) 设置模型温度
+ * @method void setIndex(integer $Index) 设置搜索引擎索引
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getTopP() 获取模型TopP
+ * @method string getTitle() 获取标题
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTopP(string $TopP) 设置模型TopP
+ * @method void setTitle(string $Title) 设置标题
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class AppModel extends AbstractModel
+class AgentReference extends AbstractModel
 {
     /**
-     * @var string 模型名称
+     * @var string 来源文档ID
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $DocId;
+
+    /**
+     * @var string id
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $Id;
+
+    /**
+     * @var string 名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $Name;
 
     /**
-     * @var string 模型描述
+     * @var integer 类型
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Desc;
+    public $Type;
 
     /**
-     * @var integer 上下文指代轮次
+     * @var string 链接
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $ContextLimit;
+    public $Url;
 
     /**
-     * @var string 模型别名
+     * @var string 文档业务ID
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $AliasName;
+    public $DocBizId;
 
     /**
-     * @var float token余量
+     * @var string 文档名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $TokenBalance;
+    public $DocName;
 
     /**
-     * @var boolean 是否使用上下文指代轮次
+     * @var string 问答业务ID
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $IsUseContext;
+    public $QaBizId;
 
     /**
-     * @var integer 上下文记忆轮数
+     * @var integer 搜索引擎索引
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $HistoryLimit;
+    public $Index;
 
     /**
-     * @var string 使用类型
+     * @var string 标题
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $UsageType;
+    public $Title;
 
     /**
-     * @var string 模型温度
+     * @param string $DocId 来源文档ID
 注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $Temperature;
-
-    /**
-     * @var string 模型TopP
+     * @param string $Id id
 注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $TopP;
-
-    /**
-     * @param string $Name 模型名称
+     * @param string $Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Desc 模型描述
+     * @param integer $Type 类型
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $ContextLimit 上下文指代轮次
+     * @param string $Url 链接
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $AliasName 模型别名
+     * @param string $DocBizId 文档业务ID
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param float $TokenBalance token余量
+     * @param string $DocName 文档名称
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param boolean $IsUseContext 是否使用上下文指代轮次
+     * @param string $QaBizId 问答业务ID
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $HistoryLimit 上下文记忆轮数
+     * @param integer $Index 搜索引擎索引
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $UsageType 使用类型
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Temperature 模型温度
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $TopP 模型TopP
+     * @param string $Title 标题
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -158,44 +158,44 @@ class AppModel extends AbstractModel
         if ($param === null) {
             return;
         }
+        if (array_key_exists("DocId",$param) and $param["DocId"] !== null) {
+            $this->DocId = $param["DocId"];
+        }
+
+        if (array_key_exists("Id",$param) and $param["Id"] !== null) {
+            $this->Id = $param["Id"];
+        }
+
         if (array_key_exists("Name",$param) and $param["Name"] !== null) {
             $this->Name = $param["Name"];
         }
 
-        if (array_key_exists("Desc",$param) and $param["Desc"] !== null) {
-            $this->Desc = $param["Desc"];
+        if (array_key_exists("Type",$param) and $param["Type"] !== null) {
+            $this->Type = $param["Type"];
         }
 
-        if (array_key_exists("ContextLimit",$param) and $param["ContextLimit"] !== null) {
-            $this->ContextLimit = $param["ContextLimit"];
+        if (array_key_exists("Url",$param) and $param["Url"] !== null) {
+            $this->Url = $param["Url"];
         }
 
-        if (array_key_exists("AliasName",$param) and $param["AliasName"] !== null) {
-            $this->AliasName = $param["AliasName"];
+        if (array_key_exists("DocBizId",$param) and $param["DocBizId"] !== null) {
+            $this->DocBizId = $param["DocBizId"];
         }
 
-        if (array_key_exists("TokenBalance",$param) and $param["TokenBalance"] !== null) {
-            $this->TokenBalance = $param["TokenBalance"];
+        if (array_key_exists("DocName",$param) and $param["DocName"] !== null) {
+            $this->DocName = $param["DocName"];
         }
 
-        if (array_key_exists("IsUseContext",$param) and $param["IsUseContext"] !== null) {
-            $this->IsUseContext = $param["IsUseContext"];
+        if (array_key_exists("QaBizId",$param) and $param["QaBizId"] !== null) {
+            $this->QaBizId = $param["QaBizId"];
         }
 
-        if (array_key_exists("HistoryLimit",$param) and $param["HistoryLimit"] !== null) {
-            $this->HistoryLimit = $param["HistoryLimit"];
+        if (array_key_exists("Index",$param) and $param["Index"] !== null) {
+            $this->Index = $param["Index"];
         }
 
-        if (array_key_exists("UsageType",$param) and $param["UsageType"] !== null) {
-            $this->UsageType = $param["UsageType"];
-        }
-
-        if (array_key_exists("Temperature",$param) and $param["Temperature"] !== null) {
-            $this->Temperature = $param["Temperature"];
-        }
-
-        if (array_key_exists("TopP",$param) and $param["TopP"] !== null) {
-            $this->TopP = $param["TopP"];
+        if (array_key_exists("Title",$param) and $param["Title"] !== null) {
+            $this->Title = $param["Title"];
         }
     }
 }
