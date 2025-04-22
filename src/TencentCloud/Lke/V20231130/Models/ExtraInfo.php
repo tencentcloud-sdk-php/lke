@@ -18,28 +18,24 @@ namespace TencentCloud\Lke\V20231130\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateRelease请求参数结构体
+ * 扩展信息
  *
- * @method string getBotBizId() 获取应用ID
- * @method void setBotBizId(string $BotBizId) 设置应用ID
- * @method string getDesc() 获取发布描述
- * @method void setDesc(string $Desc) 设置发布描述
+ * @method array getEChartsInfo() 获取ECharts信息
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setEChartsInfo(array $EChartsInfo) 设置ECharts信息
+注意：此字段可能返回 null，表示取不到有效值。
  */
-class CreateReleaseRequest extends AbstractModel
+class ExtraInfo extends AbstractModel
 {
     /**
-     * @var string 应用ID
+     * @var array ECharts信息
+注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $BotBizId;
+    public $EChartsInfo;
 
     /**
-     * @var string 发布描述
-     */
-    public $Desc;
-
-    /**
-     * @param string $BotBizId 应用ID
-     * @param string $Desc 发布描述
+     * @param array $EChartsInfo ECharts信息
+注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
     {
@@ -54,12 +50,8 @@ class CreateReleaseRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("BotBizId",$param) and $param["BotBizId"] !== null) {
-            $this->BotBizId = $param["BotBizId"];
-        }
-
-        if (array_key_exists("Desc",$param) and $param["Desc"] !== null) {
-            $this->Desc = $param["Desc"];
+        if (array_key_exists("EChartsInfo",$param) and $param["EChartsInfo"] !== null) {
+            $this->EChartsInfo = $param["EChartsInfo"];
         }
     }
 }
