@@ -18,28 +18,28 @@ namespace TencentCloud\Lke\V20231130\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeKnowledgeUsagePieGraph请求参数结构体
+ * 选项卡索引
  *
- * @method array getAppBizIds() 获取应用ID数组
- * @method void setAppBizIds(array $AppBizIds) 设置应用ID数组
- * @method string getSpaceId() 获取空间列表
- * @method void setSpaceId(string $SpaceId) 设置空间列表
+ * @method string getRecordId() 获取唯一标识
+ * @method void setRecordId(string $RecordId) 设置唯一标识
+ * @method integer getIndex() 获取选项卡索引
+ * @method void setIndex(integer $Index) 设置选项卡索引
  */
-class DescribeKnowledgeUsagePieGraphRequest extends AbstractModel
+class OptionCardIndex extends AbstractModel
 {
     /**
-     * @var array 应用ID数组
+     * @var string 唯一标识
      */
-    public $AppBizIds;
+    public $RecordId;
 
     /**
-     * @var string 空间列表
+     * @var integer 选项卡索引
      */
-    public $SpaceId;
+    public $Index;
 
     /**
-     * @param array $AppBizIds 应用ID数组
-     * @param string $SpaceId 空间列表
+     * @param string $RecordId 唯一标识
+     * @param integer $Index 选项卡索引
      */
     function __construct()
     {
@@ -54,12 +54,12 @@ class DescribeKnowledgeUsagePieGraphRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("AppBizIds",$param) and $param["AppBizIds"] !== null) {
-            $this->AppBizIds = $param["AppBizIds"];
+        if (array_key_exists("RecordId",$param) and $param["RecordId"] !== null) {
+            $this->RecordId = $param["RecordId"];
         }
 
-        if (array_key_exists("SpaceId",$param) and $param["SpaceId"] !== null) {
-            $this->SpaceId = $param["SpaceId"];
+        if (array_key_exists("Index",$param) and $param["Index"] !== null) {
+            $this->Index = $param["Index"];
         }
     }
 }

@@ -18,44 +18,36 @@ namespace TencentCloud\Lke\V20231130\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * Agent调试信息
+ * 应用配置关联的agent信息
  *
- * @method string getInput() 获取工具、大模型的输入信息，json
+ * @method integer getAgentCollaboration() 获取协同方式，1：自由转交，2：工作流编排，3：Plan-and-Execute
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setInput(string $Input) 设置工具、大模型的输入信息，json
+ * @method void setAgentCollaboration(integer $AgentCollaboration) 设置协同方式，1：自由转交，2：工作流编排，3：Plan-and-Execute
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getOutput() 获取工具、大模型的输出信息，json
+ * @method KnowledgeQaWorkflowInfo getWorkflow() 获取应用配置agent关联的工作流
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setOutput(string $Output) 设置工具、大模型的输出信息，json
+ * @method void setWorkflow(KnowledgeQaWorkflowInfo $Workflow) 设置应用配置agent关联的工作流
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getModelName() 获取模型名
- * @method void setModelName(string $ModelName) 设置模型名
  */
-class AgentDebugInfo extends AbstractModel
+class KnowledgeQaAgent extends AbstractModel
 {
     /**
-     * @var string 工具、大模型的输入信息，json
+     * @var integer 协同方式，1：自由转交，2：工作流编排，3：Plan-and-Execute
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Input;
+    public $AgentCollaboration;
 
     /**
-     * @var string 工具、大模型的输出信息，json
+     * @var KnowledgeQaWorkflowInfo 应用配置agent关联的工作流
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Output;
+    public $Workflow;
 
     /**
-     * @var string 模型名
-     */
-    public $ModelName;
-
-    /**
-     * @param string $Input 工具、大模型的输入信息，json
+     * @param integer $AgentCollaboration 协同方式，1：自由转交，2：工作流编排，3：Plan-and-Execute
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Output 工具、大模型的输出信息，json
+     * @param KnowledgeQaWorkflowInfo $Workflow 应用配置agent关联的工作流
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $ModelName 模型名
      */
     function __construct()
     {
@@ -70,16 +62,13 @@ class AgentDebugInfo extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Input",$param) and $param["Input"] !== null) {
-            $this->Input = $param["Input"];
+        if (array_key_exists("AgentCollaboration",$param) and $param["AgentCollaboration"] !== null) {
+            $this->AgentCollaboration = $param["AgentCollaboration"];
         }
 
-        if (array_key_exists("Output",$param) and $param["Output"] !== null) {
-            $this->Output = $param["Output"];
-        }
-
-        if (array_key_exists("ModelName",$param) and $param["ModelName"] !== null) {
-            $this->ModelName = $param["ModelName"];
+        if (array_key_exists("Workflow",$param) and $param["Workflow"] !== null) {
+            $this->Workflow = new KnowledgeQaWorkflowInfo();
+            $this->Workflow->deserialize($param["Workflow"]);
         }
     }
 }

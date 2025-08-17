@@ -18,44 +18,36 @@ namespace TencentCloud\Lke\V20231130\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * Agent调试信息
+ * 知识库高级设置
  *
- * @method string getInput() 获取工具、大模型的输入信息，json
+ * @method string getRerankModel() 获取重排序模型
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setInput(string $Input) 设置工具、大模型的输入信息，json
+ * @method void setRerankModel(string $RerankModel) 设置重排序模型
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getOutput() 获取工具、大模型的输出信息，json
+ * @method integer getRerankRecallNum() 获取召回数量
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setOutput(string $Output) 设置工具、大模型的输出信息，json
+ * @method void setRerankRecallNum(integer $RerankRecallNum) 设置召回数量
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getModelName() 获取模型名
- * @method void setModelName(string $ModelName) 设置模型名
  */
-class AgentDebugInfo extends AbstractModel
+class KnowledgeAdvancedConfig extends AbstractModel
 {
     /**
-     * @var string 工具、大模型的输入信息，json
+     * @var string 重排序模型
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Input;
+    public $RerankModel;
 
     /**
-     * @var string 工具、大模型的输出信息，json
+     * @var integer 召回数量
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Output;
+    public $RerankRecallNum;
 
     /**
-     * @var string 模型名
-     */
-    public $ModelName;
-
-    /**
-     * @param string $Input 工具、大模型的输入信息，json
+     * @param string $RerankModel 重排序模型
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Output 工具、大模型的输出信息，json
+     * @param integer $RerankRecallNum 召回数量
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $ModelName 模型名
      */
     function __construct()
     {
@@ -70,16 +62,12 @@ class AgentDebugInfo extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Input",$param) and $param["Input"] !== null) {
-            $this->Input = $param["Input"];
+        if (array_key_exists("RerankModel",$param) and $param["RerankModel"] !== null) {
+            $this->RerankModel = $param["RerankModel"];
         }
 
-        if (array_key_exists("Output",$param) and $param["Output"] !== null) {
-            $this->Output = $param["Output"];
-        }
-
-        if (array_key_exists("ModelName",$param) and $param["ModelName"] !== null) {
-            $this->ModelName = $param["ModelName"];
+        if (array_key_exists("RerankRecallNum",$param) and $param["RerankRecallNum"] !== null) {
+            $this->RerankRecallNum = $param["RerankRecallNum"];
         }
     }
 }

@@ -18,66 +18,48 @@ namespace TencentCloud\Lke\V20231130\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 共享知识库更新信息
+ * 知识库模型设置
  *
- * @method string getKnowledgeName() 获取共享知识库名称
- * @method void setKnowledgeName(string $KnowledgeName) 设置共享知识库名称
- * @method string getKnowledgeDescription() 获取共享知识库描述
+ * @method string getEmbeddingModel() 获取向量模型，该字段只有共享知识库有，应用知识库没有
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setKnowledgeDescription(string $KnowledgeDescription) 设置共享知识库描述
+ * @method void setEmbeddingModel(string $EmbeddingModel) 设置向量模型，该字段只有共享知识库有，应用知识库没有
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getEmbeddingModel() 获取Embedding模型
+ * @method string getQaExtractModel() 获取问答对生成模型
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setEmbeddingModel(string $EmbeddingModel) 设置Embedding模型
+ * @method void setQaExtractModel(string $QaExtractModel) 设置问答对生成模型
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getQaExtractModel() 获取问答提取模型
+ * @method string getSchemaModel() 获取schema生成模型
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setQaExtractModel(string $QaExtractModel) 设置问答提取模型
+ * @method void setSchemaModel(string $SchemaModel) 设置schema生成模型
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getOwnerStaffId() 获取拥有者id
- * @method void setOwnerStaffId(string $OwnerStaffId) 设置拥有者id
  */
-class KnowledgeUpdateInfo extends AbstractModel
+class KnowledgeModelConfig extends AbstractModel
 {
     /**
-     * @var string 共享知识库名称
-     */
-    public $KnowledgeName;
-
-    /**
-     * @var string 共享知识库描述
+     * @var string 向量模型，该字段只有共享知识库有，应用知识库没有
 注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $KnowledgeDescription;
-
-    /**
-     * @var string Embedding模型
-注意：此字段可能返回 null，表示取不到有效值。
-     * @deprecated
      */
     public $EmbeddingModel;
 
     /**
-     * @var string 问答提取模型
+     * @var string 问答对生成模型
 注意：此字段可能返回 null，表示取不到有效值。
-     * @deprecated
      */
     public $QaExtractModel;
 
     /**
-     * @var string 拥有者id
+     * @var string schema生成模型
+注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $OwnerStaffId;
+    public $SchemaModel;
 
     /**
-     * @param string $KnowledgeName 共享知识库名称
-     * @param string $KnowledgeDescription 共享知识库描述
+     * @param string $EmbeddingModel 向量模型，该字段只有共享知识库有，应用知识库没有
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $EmbeddingModel Embedding模型
+     * @param string $QaExtractModel 问答对生成模型
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $QaExtractModel 问答提取模型
+     * @param string $SchemaModel schema生成模型
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $OwnerStaffId 拥有者id
      */
     function __construct()
     {
@@ -92,14 +74,6 @@ class KnowledgeUpdateInfo extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("KnowledgeName",$param) and $param["KnowledgeName"] !== null) {
-            $this->KnowledgeName = $param["KnowledgeName"];
-        }
-
-        if (array_key_exists("KnowledgeDescription",$param) and $param["KnowledgeDescription"] !== null) {
-            $this->KnowledgeDescription = $param["KnowledgeDescription"];
-        }
-
         if (array_key_exists("EmbeddingModel",$param) and $param["EmbeddingModel"] !== null) {
             $this->EmbeddingModel = $param["EmbeddingModel"];
         }
@@ -108,8 +82,8 @@ class KnowledgeUpdateInfo extends AbstractModel
             $this->QaExtractModel = $param["QaExtractModel"];
         }
 
-        if (array_key_exists("OwnerStaffId",$param) and $param["OwnerStaffId"] !== null) {
-            $this->OwnerStaffId = $param["OwnerStaffId"];
+        if (array_key_exists("SchemaModel",$param) and $param["SchemaModel"] !== null) {
+            $this->SchemaModel = $param["SchemaModel"];
         }
     }
 }
